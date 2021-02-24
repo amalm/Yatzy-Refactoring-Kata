@@ -26,24 +26,20 @@ public class Yatzy {
     }
 
     public static int ones(int d1, int d2, int d3, int d4, int d5) {
-        int sum = 0;
         List<Integer> dices = Arrays.asList(d1, d2, d3, d4, d5);
+        return countAllOf(dices, 1);
+    }
+    private static int countAllOf(List<Integer> dices, int nr) {
+        int sum = 0;
         for (Integer i : dices) {
-            if (i == 1)
-                sum++;
+            if (i == nr)
+                sum += nr;
         }
-
         return sum;
     }
-
     public static int twos(int d1, int d2, int d3, int d4, int d5) {
-        int sum = 0;
-        if (d1 == 2) sum += 2;
-        if (d2 == 2) sum += 2;
-        if (d3 == 2) sum += 2;
-        if (d4 == 2) sum += 2;
-        if (d5 == 2) sum += 2;
-        return sum;
+        List<Integer> dices = Arrays.asList(d1, d2, d3, d4, d5);
+        return countAllOf(dices, 2);
     }
 
     public static int threes(int d1, int d2, int d3, int d4, int d5) {
