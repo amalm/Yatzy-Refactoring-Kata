@@ -1,3 +1,6 @@
+import java.util.Arrays;
+import java.util.List;
+
 public class Yatzy {
 
     public static int chance(int d1, int d2, int d3, int d4, int d5)
@@ -24,12 +27,11 @@ public class Yatzy {
 
     public static int ones(int d1, int d2, int d3, int d4, int d5) {
         int sum = 0;
-        if (d1 == 1) sum++;
-        if (d2 == 1) sum++;
-        if (d3 == 1) sum++;
-        if (d4 == 1) sum++;
-        if (d5 == 1) 
-            sum++;
+        List<Integer> dices = Arrays.asList(d1, d2, d3, d4, d5);
+        for (Integer i : dices) {
+            if (i == 1)
+                sum++;
+        }
 
         return sum;
     }
